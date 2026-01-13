@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Articles"
+    folder: "content/articles"
+    create: true
+    # 1. Update the slug to include the date. 
+    # This helps your JavaScript sort by "newest first" easily.
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      
+      # 2. Add the Featured Toggle
+      # This allows your homepage script to find the specific "hero" article.
+      - { label: "Featured Post?", name: "featured", widget: "boolean", default: false }
+      
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "YouTube Video ID", name: "video_id", widget: "string", required: false, hint: "Just the ID, e.g., dQw4w9WgXcQ" }
+      - { label: "Body", name: "body", widget: "markdown" }
