@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /article-detail.html
 
-Sitemap: https://emmystack01.github.io/learn-a-thing-a-day/sitemap.xml
+Sitemap: https://learn-a-thing-a-day.netlify.app/sitemap.xml
