@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emmystack01.github.io/learn-a-thing-a-day/sitemap.xml
