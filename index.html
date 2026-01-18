@@ -29,7 +29,7 @@
     <meta property="og:title" content="Learn a Thing, a Day">
     <meta property="og:description" content="Level up your daily dose of knowledge! Join the journey - Learn a thing, a day">
     <meta property="og:url" content="https://learn-a-thing-a-day.netlify.app/">
-    <meta property="og:image" content="https://learn-a-thing-a-day.netlify.app/og-image.png">
+    <meta property="og:image" content="hhttps://learn-a-thing-a-day.netlify.app/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Learn a Thing, a Day">
     <meta name="twitter:description" content="Level up your daily dose of knowledge! Join the journey - Learn a thing, a day">
@@ -103,6 +103,7 @@
         <div class="copyright-container">
             <div class="copyright">
                 <div class="copy">&copy; <span id="year"></span> Learnicationdaily. All Rights Reserved.</div>
+                <div class="license">This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></div>
                 <div class="dev">Built by <a href="https://x.com/Emmy_STACK01" target="_blank" rel="noopener noreferrer" >Emmy STACK01<i class="ri-twitter-x-fill"></i></a></div>
             </div>
         </div>
@@ -115,15 +116,14 @@
     const gridTarget = document.getElementById('grid-target');
 
     try {
-        // FIXED: Using backticks for the URL
+        // FIXED: Wrap URL in backticks
         const response = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`);
         const files = await response.json();
         
-        // Reverse so the newest files (by date-slug) appear first
+        // Reverse so the newest files appear first
         const latestFiles = files.reverse();
 
         gridTarget.innerHTML = ''; 
-
         let count = 0;
 
         for (const file of latestFiles) {
@@ -142,8 +142,8 @@
 
             // 1. Handle Featured Section
             if (isFeatured && featuredTarget.dataset.loaded !== "true") {
-                // FIXED: Using backticks and cleaner string concatenation
-                featuredTarget.innerHTML = 
+                // FIXED: Wrapped in backticks and added proper conditional image rendering
+                featuredTarget.innerHTML =` 
                     <div style="display: flex; flex-wrap: wrap; background: white; border-radius: 12px; overflow: hidden;">
                         ${imageUrl ? `<div style="flex: 1; min-width: 300px;"><img src="${imageUrl}" style="width:100%; height:100%; object-fit:cover;"></div>` : ''}
                         <div style="flex: 1; padding: 40px; min-width: 300px;">
@@ -151,18 +151,18 @@
                             <p>${previewText}</p>
                             <a href="article-detail.html?post=${file.name}" class="CTA-button" style="text-decoration:none;">Read Full Story</a>
                         </div>
-                    </div>;
+                    </div>`;
                 featuredTarget.dataset.loaded = "true";
             }
 
             // 2. Handle Grid (Latest 3)
             if (count < 3) {
                 const gridItem = document.createElement('div');
-                // FIXED: Using backticks for class name
+                // FIXED: Wrapped class name in backticks
                 gridItem.className = `a${count + 1}`; 
                 
-                // FIXED: Using backticks for innerHTML
-                gridItem.innerHTML = `
+                // FIXED: Wrapped innerHTML in backticks
+                gridItem.innerHTML =` 
                     ${imageUrl ? `<img src="${imageUrl}" class="grid-image" alt="${title}">` : ''}
                     <div class="grid-text-content">
                         <p><strong>${title}</strong></p>
@@ -179,12 +179,9 @@
 }
 
 loadHomepageContent();
-</script>
-<script>
+
     /*AUTO-CHANGE-YEAR*/
     document.getElementById('year').textContent = new Date().getFullYear();
-</script> 
+</script>   
 </body>
-
 </html>
-
