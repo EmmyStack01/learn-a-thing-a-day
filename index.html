@@ -82,6 +82,15 @@
             <div>
                 <h2>Newsletter-section</h2>
                 <p>Join our community of lifelong learners. Get one thought-provoking idea delivered to your inbox every morning—no fluff, just knowledge.</p>
+                <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST" class="newsletter-form">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        
+                    <input type="hidden" name="_next" value="https://emmystack01.github.io/learn-a-thing-a-day/">
+
+                    <input type="text" name="_gotcha" style="display:none">
+
+                    <button type="submit" id="submit" class="submit-btn">Submit</button>
+                </form>
             </div>
         </section>
         <section class="About-section">
@@ -185,3 +194,4 @@ loadHomepageContent();
 </script>   
 </body>
 </html>
+
