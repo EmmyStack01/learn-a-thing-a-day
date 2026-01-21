@@ -160,6 +160,34 @@ h2 {
 
 .Newsletter-section h2 { color: white; }
 
+#email {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary-dark);
+    border-radius: 25px;
+    padding: 10px;
+    color: var(--white);
+    width: 250px;
+    box-shadow: 0 4px 15px var(--white);
+}
+
+#submit {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border: 3px solid var(--bg-light);
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 4px 15px var(--white);
+}
+
+#submit:hover {
+    transform: translateY(-1px);
+    background-color: var(--primary-dark);
+    }
+
 /* --- FOOTER --- */
 footer {
     background: #111827;
@@ -196,3 +224,4 @@ font-weight: 50;
     color: hsl(0, 0%, 80%);
     text-decoration: none;
 }
+
