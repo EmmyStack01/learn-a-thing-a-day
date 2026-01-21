@@ -3,4 +3,5 @@ Allow: /
 Disallow: /admin/
 Disallow: /article-detail.html
 
-Sitemap: https://learn-a-thing-a-day.netlify.app/sitemap.xml
+Sitemap: https://learn-a-thing-daily.netlify.app/sitemap.xml
+
