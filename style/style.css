@@ -182,4 +182,17 @@ transition: all 0.5s ease-in-out;
 .copyright i{
 color: white;
 font-weight: 50;
+
+}
+
+.license{
+    font-size: 0.8em;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    color: hsl(0, 0%, 80%);
+}
+
+.license a{
+    color: hsl(0, 0%, 80%);
+    text-decoration: none;
 }
